@@ -46,10 +46,10 @@ const CreateForm = () => {
 				}
 			);
 			if (!res.ok) {
-				throw new Error(res.statusText);
+				throw new Error(`HTTP error! status: ${res.status}`);
 			}
 			const data = await res.json();
-			throw new Error(`HTTP error! status: ${res.status}`);
+			console.log(data);
 			return data;
 		} catch (error) {
 			console.error("Error:", error);
