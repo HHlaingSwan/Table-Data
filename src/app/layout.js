@@ -1,5 +1,7 @@
 
+import Link from "next/link";
 import "./globals.css";
+import Provider from "./Provider";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,7 +12,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        {children}
+        <header className="flex justify-center gap-8 px-10 py-4">
+          <Link href="/">Home</Link>
+          <Link href="/user/list">Users-List</Link>
+        </header>
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
   );
